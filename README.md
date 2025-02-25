@@ -1,7 +1,17 @@
-# Project personal
-<br>
-Hi! 👋🏼👋🏼👋🏼 
-This is a repository of my personal projects that I work on. 
-Here, you'll find various projects I've created 🚀, including code 🖥️, documentation 📄, and experiments 🔬.
-I'll be updating them over time 🔄, so stay tuned! 
-Feel free to explore🔎, and if you have any feedback or suggestions 💡, let me know! 😊
+# 🚀 My Personal Projects Repository  
+
+👋 Hi! Welcome to my repository, where I share my personal projects. Here, you'll find a variety of projects, including code, documentation, and experiments.  
+
+## ✨ What you'll find here  
+- 🖥️ Various coding projects  
+- 📄 Documentation and guides  
+- 🧪 Experiments and prototypes  
+- 🔄 Regular updates with new content  
+
+## 🔥 Stay tuned!  
+I'm constantly updating this repository, so be sure to check back for new projects and improvements.  
+
+💡 Feel free to explore, and if you have any feedback or suggestions, let me know! 😊  
+
+---
+⭐ **If you find something interesting, consider giving it a star!** ⭐  
