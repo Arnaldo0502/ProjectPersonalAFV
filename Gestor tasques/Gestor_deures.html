@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tasques</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <link id="favicon" rel="icon" type="image/png" href="llibre.png">
+</head>
+
+<body>
+    <h1>DEURES</h1>
+    <h1>
+        <span id="current-date"></span> <!-- Fecha actual -->
+        <span id="clock"></span> <!-- Reloj en tiempo real -->
+        <button id="dark-mode-toggle" class="dark-mode-button">🌙 Mode Fosc</button>
+    </h1>
+    <h2>AFEGIR NOVA TASCA
+        <button id="export-tasks-button">📤 Exportar</button>
+        <button id="import-tasks-button">📥 Importar</button>
+        <input type="file" id="import-tasks-input" style="display: none;">
+        <button id="save-tasks-button">💾 GUARDAR</button> <!-- Botón de guardado -->
+
+
+    </h2>
+    <form id="task-form">
+        <input type="date" id="date" required>
+        <select id="subject" required>
+            <option value="🏢 Sistemes de gestió empresarial">🏢 Sistemes de Gestió Empresarial</option>
+            <option value="🎨 Desenvolupament d’interfícies">🎨 Desenvolupament d’Interfícies</option>
+            <option value="🛠️ Entorns de desenvolupament">🛠️ Entorns de Desenvolupament</option>
+            <option value="📜 Llenguatges de marques i sistemes">📜 Llenguatges de Marques</option>
+            <option value="🖥️ Sistemes Informatics">🖥️ Sistemes Informàtics</option>
+            <option value="💾 Base de dades">💾 Base de Dades</option>
+            <option value="📡 Digitalització">📡 Digitalització</option>
+            <option value="💻 Programació">💻 Programació</option>
+        </select>
+        <input type="text" id="description" placeholder="Descripció" required>
+        <button type="submit">Afegir</button>
+    </form>
+
+    <h2>TASQUES PENDENTS
+        <button id="filtreAsignatura" onclick="openFilterModal()">📚 Filtrar per asignatura</button>
+        <div id="filter-modal" style="display: none;">
+            <h2>Filtrar por asignatura</h2>
+            <select id="filter-selector" multiple;>
+                <option value="todas">Todas</option>
+                <option value="🏢 Sistemes de gestió empresarial">🏢 Sistemes de Gestió Empresarial</option>
+                <option value="🎨 Desenvolupament d’interfícies">🎨 Desenvolupament d’Interfícies</option>
+                <option value="🛠️ Entorns de desenvolupament">🛠️ Entorns de Desenvolupament</option>
+                <option value="📜 Llenguatges de marques i sistemes">📜 Llenguatges de Marques</option>
+                <option value="🖥️ Sistemes Informatics">🖥️ Sistemes Informàtics</option>
+                <option value="💾 Base de dades">💾 Base de Dades</option>
+                <option value="📡 Digitalització">📡 Digitalització</option>
+                <option value="💻 Programació">💻 Programació</option>
+                <!-- Agregar opciones para cada asignatura -->
+            </select>
+            <form id="filter-form">
+                <button type="submit">Filtrar</button>
+            </form>
+            <button class="close">Cancelar</button>
+        </div>
+        <button id="sort-tasks-button">📅 Ordenar per Data</button>
+
+    </h2>
+    <table>
+        <thead>
+            <tr>
+                <th>📅 DATA</th>
+                <th>📚 ASSIGNATURA</th>
+                <th>📝 DESCRIPCIÓ</th>
+                <th>✅</th>
+                <th>✏️</th>
+                <th>❌</th>
+            </tr>
+        </thead>
+        <tbody id="task-list">
+            <!-- Aquí s'afegiran dinàmicament les tasques -->
+        </tbody>
+    </table>
+
+    <h2>TASQUES COMPLETADES <button id="delete-completed-button">🗑️ Eliminar</button></h2>
+    <table>
+        <thead>
+            <tr>
+                <th>📅 DATA</th>
+                <th>📚 ASSIGNATURA</th>
+                <th>📝 DESCRIPCIÓ</th>
+                <th>🔄️</th>
+                <th>✏️</th>
+                <th>❌</th>
+            </tr>
+        </thead>
+        <tbody id="completed-task-list">
+            <!-- Aquí s'afegiran dinàmicament les tasques completes -->
+        </tbody>
+    </table>
+
+    <!-- Finestra emergent per editar tasques -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span id="close">&times;</span>
+            <h2>Editar Tasca</h2>
+            <form id="edit-task-form">
+                <input type="date" id="edit-date" required>
+                <select id="edit-subject" required>
+                    <option value="🏢 Sistemes de gestió empresarial">🏢 Sistemes de Gestió Empresarial</option>
+                    <option value="🎨 Desenvolupament d’interfícies">🎨 Desenvolupament d’Interfícies</option>
+                    <option value="🛠️ Entorns de desenvolupament">🛠️ Entorns de Desenvolupament</option>
+                    <option value="📜 Llenguatges de marques i sistemes">📜 Llenguatges de Marques</option>
+                    <option value="🖥️ Sistemes Informatics">🖥️ Sistemes Informàtics</option>
+                    <option value="💾 Base de dades">💾 Base de Dades</option>
+                    <option value="📡 Digitalització">📡 Digitalització</option>
+                    <option value="💻 Programació">💻 Programació</option>
+                </select>
+                <input type="text" id="edit-description" placeholder="Descripció" required>
+                <button type="submit" id="btnGuardar">💾 Guardar Canvis</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
