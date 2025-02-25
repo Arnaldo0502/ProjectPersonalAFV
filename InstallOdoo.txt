@@ -1,0 +1,149 @@
+#!/bin/bash
+
+# Variables
+ODOO_USER="odoo17"
+ODOO_DIR="/opt/odoo17"
+ODOO_ADDONS="$ODOO_DIR/odoo17-custom-addons"
+ODOO_LOG="/var/log/odoo17.log"
+ODOO_CONF="/etc/odoo17.conf"
+ODOO_SERVICE="/etc/systemd/system/odoo17.service"
+ODOO_PASSWORD="1234"  # Cambia esto por una contraseña segura.
+
+pause() {
+    echo ""
+    read -p "Presiona Enter para continuar..."
+    echo ""
+}
+
+echo "Iniciando la instalación de Odoo 17 en Ubuntu 22.04..."
+pause
+
+# Paso 1: Actualizar el sistema
+echo "Paso 1: Actualizando el sistema..."
+sudo apt-get update -y && sudo apt-get upgrade -y
+pause
+
+# Paso 2: Instalar Python y librerías necesarias
+echo "Paso 2: Instalando Python y dependencias..."
+sudo apt-get install -y python3-pip python3-dev python3-venv libxml2-dev libxslt1-dev zlib1g-dev \
+libsasl2-dev libldap2-dev build-essential libssl-dev libffi-dev libmysqlclient-dev libjpeg-dev \
+libpq-dev libjpeg8-dev liblcms2-dev libblas-dev libatlas-base-dev
+pause
+
+# Paso 3: Instalar NPM y complementos CSS
+echo "Paso 3: Instalando NPM y complementos CSS..."
+sudo apt-get install -y npm
+sudo ln -s /usr/bin/nodejs /usr/bin/node
+sudo npm install -g less less-plugin-clean-css
+sudo apt-get install -y node-less
+pause
+
+# Paso 4: Instalar libssl1.1, xfonts-75dpi y xfonts-base
+echo "Paso 4: Instalando libssl1.1 y paquetes de fuentes requeridos..."
+wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
+sudo dpkg -i libssl1.1_1.1.0g-2ubuntu4_amd64.deb
+
+wget http://archive.ubuntu.com/ubuntu/pool/universe/x/xfonts-75dpi/xfonts-75dpi_1.0.4+nmu1_all.deb
+wget http://archive.ubuntu.com/ubuntu/pool/main/x/xfonts-base/xfonts-base_1.0.5_all.deb
+sudo dpkg -i xfonts-75dpi_1.0.4+nmu1_all.deb
+sudo dpkg -i xfonts-base_1.0.5_all.deb
+pause
+
+# Paso 5: Instalar Wkhtmltopdf
+echo "Paso 5: Instalando Wkhtmltopdf..."
+sudo wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.bionic_amd64.deb
+sudo dpkg -i wkhtmltox_0.12.6-1.bionic_amd64.deb
+sudo apt install -f
+pause
+
+# Paso 6: Instalar PostgreSQL
+echo "Paso 6: Instalando PostgreSQL..."
+sudo apt-get install postgresql -y
+sudo systemctl start postgresql && sudo systemctl enable postgresql
+pause
+
+# Paso 7: Crear usuarios Odoo y PostgreSQL
+echo "Paso 7: Creando usuario $ODOO_USER..."
+sudo useradd -m -U -r -d $ODOO_DIR -s /bin/bash $ODOO_USER
+echo "$ODOO_USER:$ODOO_PASSWORD" | sudo chpasswd
+
+echo "Agregando $ODOO_USER al grupo sudo..."
+sudo usermod -aG sudo $ODOO_USER
+
+echo "Creando usuario PostgreSQL para $ODOO_USER..."
+sudo su - postgres -c "createuser -s $ODOO_USER"
+pause
+
+# Paso 8: Instalar y configurar Odoo 17
+echo "Paso 8: Clonando el repositorio de Odoo 17..."
+sudo -u $ODOO_USER git clone https://www.github.com/odoo/odoo --depth 1 --branch 17.0 $ODOO_DIR/odoo17
+
+echo "Creando entorno virtual e instalando dependencias..."
+sudo -u $ODOO_USER bash -c "
+cd $ODOO_DIR
+python3 -m venv odoo17-venv
+source odoo17-venv/bin/activate
+pip install --upgrade pip
+pip install wheel
+pip install -r odoo17/requirements.txt
+deactivate
+"
+pause
+
+echo "Creando directorios adicionales y archivo de log..."
+sudo mkdir -p $ODOO_ADDONS
+sudo mkdir -p $(dirname $ODOO_LOG)
+sudo touch $ODOO_LOG
+sudo chown -R $ODOO_USER:$ODOO_USER $ODOO_ADDONS $ODOO_LOG
+pause
+
+# Paso 9: Crear archivo de configuración de Odoo
+echo "Paso 9: Creando archivo de configuración $ODOO_CONF..."
+sudo bash -c "cat > $ODOO_CONF" <<EOL
+[options]
+admin_passwd = $ODOO_PASSWORD
+db_host = False
+db_port = False
+db_user = $ODOO_USER
+db_password = False
+xmlrpc_port = 8069
+logfile = $ODOO_LOG
+addons_path = $ODOO_DIR/odoo17/addons,$ODOO_ADDONS
+EOL
+sudo chown $ODOO_USER:$ODOO_USER $ODOO_CONF
+sudo chmod 640 $ODOO_CONF
+pause
+
+# Paso 10: Crear archivo de servicio Systemd para Odoo
+echo "Paso 10: Creando archivo de servicio $ODOO_SERVICE..."
+sudo bash -c "cat > $ODOO_SERVICE" <<EOL
+[Unit]
+Description=Odoo17
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+SyslogIdentifier=odoo17
+PermissionsStartOnly=true
+User=$ODOO_USER
+Group=$ODOO_USER
+ExecStart=$ODOO_DIR/odoo17-venv/bin/python3 $ODOO_DIR/odoo17/odoo-bin -c $ODOO_CONF
+StandardOutput=journal+console
+
+[Install]
+WantedBy=multi-user.target
+EOL
+pause
+
+echo "Recargando demonios de Systemd..."
+sudo systemctl daemon-reload
+sudo systemctl start odoo17
+sudo systemctl enable odoo17
+pause
+
+# Verificar instalación
+echo "Verificando el estado del servicio Odoo..."
+sudo systemctl status odoo17
+
+echo "¡Instalación completada! Accede a Odoo 17 desde http://<IP_DEL_SERVIDOR>:8069"
+
