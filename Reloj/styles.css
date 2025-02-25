@@ -1,0 +1,104 @@
+/* Estilos generales */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  background: black;
+}
+
+/* Fondo con luces de neón */
+.neon-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.neon-background::before,
+.neon-background::after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(58, 255, 196, 0.5), rgba(58, 196, 255, 0.5), rgba(255, 102, 196, 0));
+  filter: blur(150px);
+  animation: color-pulse 10s infinite alternate;
+}
+
+.neon-background::after {
+  background: radial-gradient(circle, rgba(255, 102, 196, 0.5), rgba(255, 255, 102, 0.5), rgba(58, 255, 196, 0));
+  animation: color-pulse-reverse 12s infinite alternate-reverse;
+}
+
+/* Animaciones */
+@keyframes color-pulse {
+  0% {
+      transform: scale(1);
+      opacity: 0.8;
+      filter: hue-rotate(0deg);
+  }
+  50% {
+      filter: hue-rotate(180deg);
+  }
+  100% {
+      transform: scale(1.5);
+      opacity: 0.3;
+      filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes color-pulse-reverse {
+  0% {
+      transform: scale(1.2);
+      opacity: 0.4;
+      filter: hue-rotate(360deg);
+  }
+  50% {
+      filter: hue-rotate(180deg);
+  }
+  100% {
+      transform: scale(1.7);
+      opacity: 0.1;
+      filter: hue-rotate(0deg);
+  }
+}
+
+/* Reloj */
+.clock {
+  position: relative;
+  z-index: 1;
+  color: white;
+  font-size: 10vw;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8),
+               0 0 25px rgba(58, 255, 196, 0.6),
+               0 0 35px rgba(255, 102, 196, 0.5);
+  text-align: center;
+  font-weight: bold;
+}
+
+.crystal-square {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
