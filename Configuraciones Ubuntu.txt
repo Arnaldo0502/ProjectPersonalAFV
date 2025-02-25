@@ -1,0 +1,108 @@
+######################################################
+## INSTALAR TEMAS / EXTENSIONES / ICONOS / OTROS... ##
+######################################################
+⚪ Actualizar & instalar retoques + app extensiones:
+➡️ sudo apt-get update -y
+➡️ sudo apt-get upgrade -y
+➡️ sudo apt install gnome-tweaks gnome-shell gnome-shell-extensions -y
+
+Recursos Útiles:
+🌐 Temas, iconos y otros: gnome-look.org 
+💡 (Siga las instrucciones según lo que descargue)
+🌐 Extensiones GNOME: extensions.gnome.org 
+💡 (Instale la extensión en su navegador para gestionar extensiones)
+💡 (Lista de extensiones abajo del todo ⬇️)
+
+##########################################
+##	EDITOR MENU / EDITOR GRUB MENU	##
+##########################################
+🖥️ Editor del Menú (Modificar nombres, iconos y crear accesos directos):
+➡️ sudo apt install menulibre -y
+⚙️ Editor de GRUB (Modificar la configuración del arranque):
+➡️ sudo apt install grub-customizer -y
+
+##########################################
+##		TERMINAL		## 
+##########################################
+🖥️ Instalar Zsh:
+➡️ sudo apt install zsh -y
+
+⚡ Instalar Oh My Zsh (Framework para Zsh con plugins y configuraciones):
+➡️ sudo apt install curl -y 
+➡️ sudo apt install git -y 
+➡️ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+🎨 Tema Powerlevel10k:
+➡️ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+➡️ sudo nano ~/.zshrc
+
+⚪ Agregar esta línea en el archivo .zshrc: 
+➡️ ZSH_THEME="powerlevel10k/powerlevel10k" 
+
+⚪ Luego, aplicar cambios y configurar:
+➡️ source ~/.zshrc
+➡️ p10k configure
+
+🔠 Descargar e instalar fuente para iconos: https://www.nerdfonts.com/font-downloads (Meslo)
+➡️ Instalar un archivo .ttf
+➡️ Reiniciar el sistema
+💡 Ajustar fuente en terminal si es necesario:
+	➡️ GNOME Terminal: Preferencias > Perfil > Texto > Fuente personalizada.
+	➡️ Kitty: Edita el archivo kitty.conf y agrega font_family MesloLGS NF.
+
+##################################################
+##	LISTA DE EXTENSIONES RECOMENDADAS	##
+##################################################
+📌 Organización y accesibilidad
+	🖥️ Add to Desktop		- Añadir apps al escritorio
+	🅰️ Alphabetical App Grid 	– Ordena las apps alfabéticamente.
+	👻 App Hider 			– Oculta apps del menú.
+	📌 Keep pinned apps in AppGrid	– Mantiene apps ancladas en el grid.
+	📜 Extension List 		– Lista y gestiona extensiones.
+	🚫 Hide Top Bar 		– Oculta la barra superior.
+	🔡 Lock Keys 			– Muestra el estado de Bloq Mayús, Num y Scroll.
+	
+🎨 Personalización visual
+	🌫️ Blur my Shell 		– Añade desenfoque al shell.
+	🔥 Burn My Windows 		– Animaciones al cerrar ventanas.
+	🎞️ Coverflow Alt-Tab 		– Alt+Tab con efecto Coverflow.
+	🧊 Desktop Cube 		– Efecto de cubo 3D en escritorios.
+	🍻 Open Bar 			– Barra superior personalizable.
+	🎨 User Themes 		– Permite cambiar el tema de GNOME.
+	
+🖥️ Barra de tareas y docks
+	📌 App Icons Taskbar 		– Barra de tareas con iconos.
+	🚀 Dash2Dock Animated 		– Dock animado y personalizable.
+	🖥️ Show Desktop Applet 	– Botón para mostrar el escritorio.
+	🎵 Spotify Controls+Track Info	– Controles y canción en la barra.
+	
+🏗️ Efectos y comportamiento de ventanas
+	🪟 Compiz Windows Effect	– Efectos al mover la ventana.
+	🔒 Lockscreen Extension  	– Personalizar pantalla de bloqueo.
+	🖱️ Mouse Follows Focus   	– El cursor sigue el foco de la ventana.
+	
+⚡ Atajos y mejoras de sistema
+	🔄 Custom Reboot 		– Reinicia directo a otro SO.
+	📦 VirtualBox Applet 		– Control de máquinas VirtualBox.
+	📊 Vitals 			– Muestra datos del sistema.
+	
+🔔 Notificaciones e indicadores
+	📋 Clipboard Indicator 	– Historial del portapapeles.
+	🔔 Notification Banner Reloaded – Mejora notificaciones emergentes.
+	
+🔋 Batería, sonido y hardware
+	🔋 Autohide Battery Percentage	– Oculta/muestra el % de batería.
+	💾 Drive Activity Indicator 	– Muestra actividad de discos.
+	💽 Removable Drive Menu 	– Acceso rápido a discos USB.
+	🔊 Sound Percentage 		– Oculta/muestra el % de sonido.
+	
+📶 Conectividad y redes
+	🔵 Bluetooth Quick Connect 	– Conexión rápida a Bluetooth.
+	📶 Wifi QR Code 		– Genera QR para compartir Wi-Fi.
+	
+🖐️ Gestos y controles
+	✋ X11 Gestures 		– Usar gestos con el touchpad.(seguir pasos para instalar⬇️)
+		➡️ sudo apt install flatpak -y
+		➡️ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+		➡️ flatpak install flathub com.github.joseexposito.touche -y
+		➡️ flatpak list | grep touche -(comprovacion)
