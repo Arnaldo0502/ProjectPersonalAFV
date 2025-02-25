@@ -2,7 +2,7 @@
 
 👋 Hi! Welcome to my repository, where I share my personal projects. Here, you'll find a variety of projects, including code, documentation, and experiments.  
 
-## ✨ What you'll find here  
+## ✨ What you'll find here?
 - 🖥️ Various coding projects  
 - 📄 Documentation and guides  
 - 🧪 Experiments and prototypes  
