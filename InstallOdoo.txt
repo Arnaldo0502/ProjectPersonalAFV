@@ -1,6 +1,5 @@
 #!/bin/bash
-
-# Variables
+#If you want to execute this, change .txt to .sh and give it execute permissions with chmod +x.# Variables
 ODOO_USER="odoo17"
 ODOO_DIR="/opt/odoo17"
 ODOO_ADDONS="$ODOO_DIR/odoo17-custom-addons"
