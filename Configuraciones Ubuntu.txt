@@ -19,6 +19,8 @@ Recursos Útiles:
 🖥️ Editor del Menú (Modificar nombres, iconos y crear accesos directos):
 ➡️ sudo apt install menulibre -y
 ⚙️ Editor de GRUB (Modificar la configuración del arranque):
+➡️ sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+➡️ sudo apt update
 ➡️ sudo apt install grub-customizer -y
 
 ##########################################
