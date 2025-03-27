@@ -108,3 +108,6 @@ Recursos Útiles:
 		➡️ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 		➡️ flatpak install flathub com.github.joseexposito.touche -y
 		➡️ flatpak list | grep touche -(comprovacion)
+
+
+https://github.com/polybar/polybar?tab=readme-ov-file
