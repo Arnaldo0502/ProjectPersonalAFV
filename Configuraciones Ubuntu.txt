@@ -30,8 +30,7 @@ Recursos Útiles:
 ➡️ sudo apt install zsh -y
 
 ⚡ Instalar Oh My Zsh (Framework para Zsh con plugins y configuraciones):
-➡️ sudo apt install curl -y 
-➡️ sudo apt install git -y 
+➡️ sudo apt install curl git -y 
 ➡️ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 🎨 Tema Powerlevel10k:
