@@ -69,12 +69,12 @@ Recursos Útiles:
 	🎞️ Coverflow Alt-Tab 		– Alt+Tab con efecto Coverflow.
 	🧊 Desktop Cube 		– Efecto de cubo 3D en escritorios.
 	🍻 Open Bar 			– Barra superior personalizable.
-	🎨 User Themes 		– Permite cambiar el tema de GNOME.
+	🎨 User Themes 			– Permite cambiar el tema de GNOME.
 	
 🖥️ Barra de tareas y docks
 	📌 App Icons Taskbar 		– Barra de tareas con iconos.
 	🚀 Dash2Dock Animated 		– Dock animado y personalizable.
-	🖥️ Show Desktop Applet 	– Botón para mostrar el escritorio.
+	🖥️ Show Desktop Applet 		– Botón para mostrar el escritorio.
 	🎵 Spotify Controls+Track Info	– Controles y canción en la barra.
 	
 🏗️ Efectos y comportamiento de ventanas
@@ -88,7 +88,7 @@ Recursos Útiles:
 	📊 Vitals 			– Muestra datos del sistema.
 	
 🔔 Notificaciones e indicadores
-	📋 Clipboard Indicator 	– Historial del portapapeles.
+	📋 Clipboard Indicator 		– Historial del portapapeles.
 	🔔 Notification Banner Reloaded – Mejora notificaciones emergentes.
 	
 🔋 Batería, sonido y hardware
@@ -96,6 +96,7 @@ Recursos Útiles:
 	💾 Drive Activity Indicator 	– Muestra actividad de discos.
 	💽 Removable Drive Menu 	– Acceso rápido a discos USB.
 	🔊 Sound Percentage 		– Oculta/muestra el % de sonido.
+	🔊 Quick Settings Audio Panel	- Mejora el apartado de sonido, permite bajar el volumen por separado
 	
 📶 Conectividad y redes
 	🔵 Bluetooth Quick Connect 	– Conexión rápida a Bluetooth.
