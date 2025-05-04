@@ -14,14 +14,18 @@ Recursos Útiles:
 💡 (Lista de extensiones abajo del todo ⬇️)
 
 ##########################################
-##	EDITOR MENU / EDITOR GRUB MENU	##
+##	Others configurations		##
 ##########################################
-🖥️ Editor del Menú (Modificar nombres, iconos y crear accesos directos):
+- Editor del Menú (Modificar nombres, iconos y crear accesos directos):
 ➡️ sudo apt install menulibre -y
-⚙️ Editor de GRUB (Modificar la configuración del arranque):
+
+- Editor de GRUB (Modificar la configuración del arranque):
 ➡️ sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 ➡️ sudo apt update
 ➡️ sudo apt install grub-customizer -y
+
+- Customize topbar
+https://github.com/polybar/polybar?tab=readme-ov-file
 
 ##########################################
 ##		TERMINAL		## 
@@ -109,5 +113,11 @@ Recursos Útiles:
 		➡️ flatpak install flathub com.github.joseexposito.touche -y
 		➡️ flatpak list | grep touche -(comprovacion)
 
+##########################################
+##		Emulator		## 
+##########################################
+- EmuDeck (Steam):
+sudo apt install bash flatpak git jq libfuse2 rsync unzip zenity whiptail
+curl -L https://raw.githubusercontent.com/dragoonDorise/EmuDeck/main/install.sh | bash
 
-https://github.com/polybar/polybar?tab=readme-ov-file
+
