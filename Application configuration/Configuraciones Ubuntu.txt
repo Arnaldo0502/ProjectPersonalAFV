@@ -74,7 +74,7 @@ https://github.com/polybar/polybar?tab=readme-ov-file
 	🎞️ Coverflow Alt-Tab 		– Alt+Tab con efecto Coverflow.
 	🧊 Desktop Cube 		– Efecto de cubo 3D en escritorios.
 	🍻 Open Bar 			– Barra superior personalizable.
-	🎨 User Themes 		– Permite cambiar el tema de GNOME.
+	🎨 User Themes 			– Permite cambiar el tema de GNOME.
 	
 🖥️ Barra de tareas y docks
 	📌 App Icons Taskbar 		– Barra de tareas con iconos.
