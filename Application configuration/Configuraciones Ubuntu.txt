@@ -116,10 +116,15 @@ https://github.com/polybar/polybar?tab=readme-ov-file
 		➡️ flatpak list | grep touche -(comprovacion)
 
 ##########################################
-##		Emulator		## 
+##		Apps							## 
 ##########################################
 - EmuDeck (Steam):
 sudo apt install bash flatpak git jq libfuse2 rsync unzip zenity whiptail
 curl -L https://raw.githubusercontent.com/dragoonDorise/EmuDeck/main/install.sh | bash
+
+- Endeavour (Tasks)
+web: https://gitlab.gnome.org/World/Endeavour
+sudo apt install endeavour
+
 
 
