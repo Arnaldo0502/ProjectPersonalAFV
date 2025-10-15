@@ -1,0 +1,12 @@
+[Unit]
+Description=Firefox Kiosk Mode
+After=systemd-user-sessions.service
+
+[Service]
+User=prueba
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/startx /usr/bin/firefox --kiosk --private-window https://cloud.aeolservice.es/
+Restart=always
+
+[Install]
+WantedBy=graphical.target
