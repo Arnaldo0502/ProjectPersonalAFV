@@ -1,0 +1,20 @@
+sudo nano /usr/share/xsessions/kiosk-firefox.desktop
+
+[Desktop Entry]
+Name=Kiosk Firefox
+Comment=Iniciar Firefox en modo kiosko
+Exec=/usr/local/bin/firefox-kiosk.sh
+Type=Application
+
+sudo nano /usr/local/bin/firefox-kiosk.sh
+
+#!/bin/bash
+# Desactivar la suspensión, salvapantallas y pantalla en negro
+gsettings set org.gnome.desktop.session idle-delay 0
+gsettings set org.gnome.desktop.screensaver lock-enabled false
+xset s off
+xset -dpms
+xset s noblank
+
+# Ejecutar Firefox en modo kiosko
+firefox --kiosk https://cloud.aeolservice.es/
