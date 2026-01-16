@@ -59,57 +59,58 @@ https://github.com/polybar/polybar?tab=readme-ov-file
 ##	LISTA DE EXTENSIONES RECOMENDADAS	##
 ##################################################
 📌 Organización y accesibilidad
-	🖥️ Add to Desktop		- Añadir apps al escritorio
-	🅰️ Alphabetical App Grid 	– Ordena las apps alfabéticamente.
-	👻 App Hider 			– Oculta apps del menú.
+	🖥️ Add to Desktop				- Añadir apps al escritorio
+	🅰️ Alphabetical App Grid 		– Ordena las apps alfabéticamente.
+	👻 App Hider 					– Oculta apps del menú.
 	📌 Keep pinned apps in AppGrid	– Mantiene apps ancladas en el grid.
-	📜 Extension List 		– Lista y gestiona extensiones.
-	🚫 Hide Top Bar 		– Oculta la barra superior.
-	🔡 Lock Keys 			– Muestra el estado de Bloq Mayús, Num y Scroll.
-	📜 Task Widget			- Gestor de tareas
+	📜 Extension List 				– Lista y gestiona extensiones.
+	🚫 Hide Top Bar 				– Oculta la barra superior.
+	🔡 Lock Keys 					– Muestra el estado de Bloq Mayús, Num y Scroll.
+	📜 Task Widget					- Gestor de tareas
 	
 🎨 Personalización visual
 	🌫️ Blur my Shell 		– Añade desenfoque al shell.
 	🔥 Burn My Windows 		– Animaciones al cerrar ventanas.
-	🎞️ Coverflow Alt-Tab 		– Alt+Tab con efecto Coverflow.
+	🎞️ Coverflow Alt-Tab 	– Alt+Tab con efecto Coverflow.
 	🧊 Desktop Cube 		– Efecto de cubo 3D en escritorios.
 	🍻 Open Bar 			– Barra superior personalizable.
 	🎨 User Themes 			– Permite cambiar el tema de GNOME.
 	
 🖥️ Barra de tareas y docks
-	📌 App Icons Taskbar 		– Barra de tareas con iconos.
-	🚀 Dash2Dock Animated 		– Dock animado y personalizable.
-	🖥️ Show Desktop Applet 		– Botón para mostrar el escritorio.
+	📌 App Icons Taskbar 			– Barra de tareas con iconos.
+	🚀 Dash2Dock Animated 			– Dock animado y personalizable.
+	🖥️ Show Desktop Applet 			– Botón para mostrar el escritorio.
 	🎵 Spotify Controls+Track Info	– Controles y canción en la barra.
 	
 🏗️ Efectos y comportamiento de ventanas
 	🪟 Compiz Windows Effect	– Efectos al mover la ventana.
 	🔒 Lockscreen Extension  	– Personalizar pantalla de bloqueo.
 	🖱️ Mouse Follows Focus   	– El cursor sigue el foco de la ventana.
+	🪟 Tiling Assistant			- Gestor de ventanas
 	
 ⚡ Atajos y mejoras de sistema
-	🔄 Custom Reboot 		– Reinicia directo a otro SO.
+	🔄 Custom Reboot 			– Reinicia directo a otro SO.
 	📦 VirtualBox Applet 		– Control de máquinas VirtualBox.
-	📊 Vitals 			– Muestra datos del sistema.
+	📊 Vitals 					– Muestra datos del sistema.
 	
 🔔 Notificaciones e indicadores
-	📋 Clipboard Indicator 		– Historial del portapapeles.
+	📋 Clipboard Indicator 			– Historial del portapapeles.
 	🔔 Notification Banner Reloaded – Mejora notificaciones emergentes.
 	
 🔋 Batería, sonido y hardware
 	🔋 Autohide Battery Percentage	– Oculta/muestra el % de batería.
 	💾 Drive Activity Indicator 	– Muestra actividad de discos.
-	💽 Removable Drive Menu 	– Acceso rápido a discos USB.
-	🔊 Sound Percentage 		– Oculta/muestra el % de sonido.
+	💽 Removable Drive Menu 		– Acceso rápido a discos USB.
+	🔊 Sound Percentage 			– Oculta/muestra el % de sonido.
 	🔊 Quick Settings Audio Panel	- Mejora el apartado de sonido, permite bajar el volumen por separado
 	
 📶 Conectividad y redes
 	🔵 Bluetooth Quick Connect 	– Conexión rápida a Bluetooth.
-	📶 Wifi QR Code 		– Genera QR para compartir Wi-Fi.
-	🌐 Quick Web Search		- Busca en la web sin acceder al navegador
+	📶 Wifi QR Code 			– Genera QR para compartir Wi-Fi.
+	🌐 Quick Web Search			- Busca en la web sin acceder al navegador
 	
 🖐️ Gestos y controles
-	✋ X11 Gestures 		– Usar gestos con el touchpad.(seguir pasos para instalar⬇️)
+	✋ X11 Gestures 			– Usar gestos con el touchpad.(seguir pasos para instalar⬇️)
 		➡️ sudo apt install flatpak -y
 		➡️ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 		➡️ flatpak install flathub com.github.joseexposito.touche -y
